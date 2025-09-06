@@ -46,3 +46,75 @@ flowchart LR
   L --> M[13. Validation & Smoke Tests]
   M --> N[14. Production rollout & Cost Controls]
 ```
+
+```python
+repo-root/
+├─ README.md                                  # Project overview + how to use this repository
+├─ .github/
+│  └─ workflows/
+│     ├─ docker-build-push.yml                 # Build & push container images to ECR
+│     ├─ terraform.yml                         # CI for terraform: fmt, lint, plan, apply
+│     └─ lambda-deploy.yml                     # Trigger Lambda updates & smoke tests
+├─ app/
+│  ├─ service-a/                               # Microservice A (code + Dockerfile.lambda)
+│  │  ├─ src/
+│  │  └─ Dockerfile.lambda
+│  └─ service-b/
+│     ├─ src/
+│     └─ Dockerfile.lambda
+├─ docs/
+│  ├─ architecture.md                          # Text + ASCII/Mermaid diagrams
+│  ├─ deployment-instructions.md               # Step-by-step for dev and prod
+│  └─ monitoring-and-logging.md                # CloudWatch, X-Ray, alarms overview
+├─ docker/                                     # Optional: central place for multi-service builds
+│  └─ README.md
+├─ terraform/                                  # Root of all terraform configs
+│  ├─ README.md
+│  ├─ versions.tf                              # pin terraform & provider versions (e.g., Terraform 1.x+)
+│  ├─ backend.tf                               # S3 backend + DynamoDB lock (refer to envs)
+│  ├─ providers.tf                             # provider blocks (aws)
+│  ├─ globals.tfvars.example                    # example global vars
+│  ├─ modules/
+│  │  ├─ vpc/
+│  │  │  ├─ main.tf
+│  │  │  ├─ variables.tf
+│  │  │  ├─ outputs.tf
+│  │  │  └─ README.md
+│  │  ├─ iam/
+│  │  │  ├─ main.tf          # roles: lambda exec, api gateway, X-Ray, etc.
+│  │  │  └─ README.md
+│  │  ├─ ecr/
+│  │  │  ├─ main.tf          # ecr repo + lifecycle policy + scan-on-push
+│  │  │  └─ README.md
+│  │  ├─ s3/
+│  │  │  ├─ main.tf          # artifact buckets, state bucket (if desired)
+│  │  │  └─ README.md
+│  │  ├─ eks/                # optional: create EKS cluster if you also want cluster deployments
+│  │  │  ├─ main.tf
+│  │  │  └─ README.md
+│  │  ├─ lambda/
+│  │  │  ├─ main.tf          # lambda function (image_config), log group, permissions
+│  │  │  ├─ variables.tf
+│  │  │  └─ README.md
+│  │  ├─ api_gateway/
+│  │  │  ├─ main.tf          # http api + integrations + route settings
+│  │  │  └─ README.md
+│  │  └─ monitoring/
+│  │     ├─ main.tf          # cloudwatch metrics, alarms, log groups, subscription filters
+│  │     └─ README.md
+│  └─ environments/
+│     ├─ dev/
+│     │  ├─ backend.tf       # S3 backend config for dev
+│     │  ├─ provider.tf
+│     │  ├─ main.tf          # calls modules with dev variables
+│     │  ├─ terraform.tfvars
+│     │  └─ variables.tf
+│     └─ prod/
+│        ├─ backend.tf
+│        ├─ provider.tf
+│        ├─ main.tf
+│        ├─ terraform.tfvars
+│        └─ variables.tf
+└─ scripts/ (optional)
+   └─ README.md            # placeholders for future helper scripts (not required now)
+```
