@@ -10,9 +10,10 @@
 #### Challenge Structure
 
 This hackathon offers three deployment tracks. Each team should choose one track to focus on:
-	1.	##### [Amazon EKS Deployment Track](https://github.com/Uday-Kalla/projects/tree/main/aws-lambda-container-microservices/AWS_EKS_Deployment_Track/)
-	2.	##### [AWS Fargate Deployment Track](https://github.com/Uday-Kalla/projects/tree/main/aws-lambda-container-microservices/AWS_Fargate_Deployment_Track/)
-	3.	##### [AWS Lambda Container Deployment Track](https://github.com/Uday-Kalla/projects/tree/main/aws-lambda-container-microservices/AWS_Lambda_Container_Deployment_Track)
+
+1.	##### [Amazon EKS Deployment Track](https://github.com/Uday-Kalla/projects/tree/main/aws-lambda-container-microservices/AWS_EKS_Deployment_Track/)
+2.	##### [AWS Fargate Deployment Track](https://github.com/Uday-Kalla/projects/tree/main/aws-lambda-container-microservices/AWS_Fargate_Deployment_Track/)
+3.	##### [AWS Lambda Container Deployment Track](https://github.com/Uday-Kalla/projects/tree/main/aws-lambda-container-microservices/AWS_Lambda_Container_Deployment_Track)
 
 #### Common Requirements
 
