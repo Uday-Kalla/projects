@@ -26,18 +26,18 @@ You will be provided with two Node.js microservices - a Patient Service and an A
 You need to containerize these microservices using Docker.
 
 ##### 3.	Infrastructure as Code (Terraform):
-  *	Set up a Terraform project structure supporting multiple environments (dev, staging, prod).
-	*	Provision the following AWS resources:
-		*	VPC with public and private subnets across two availability zones
-		*	IAM roles and security groups
-		*	S3 bucket for Terraform state storage
-		*	DynamoDB table for state locking
-		*	(Other resources specific to your chosen track)
+* Set up a Terraform project structure supporting multiple environments (dev, staging, prod).
+*	Provision the following AWS resources:
+	*	VPC with public and private subnets across two availability zones
+	*	IAM roles and security groups
+	*	S3 bucket for Terraform state storage
+	*	DynamoDB table for state locking
+	*	(Other resources specific to your chosen track)
 
 ##### 4.	Terraform State Management:
   *	Implement remote state storage using S3
-	*	Set up state locking with DynamoDB
-	*	Configure workspace separation for different environments
+  *	Set up state locking with DynamoDB
+  *	Configure workspace separation for different environments
 
 ##### 5.	GitHub Actions for IaC:
 
