@@ -42,9 +42,10 @@ You need to containerize these microservices using Docker.
 ##### 5.	GitHub Actions for IaC:
 
   * Create workflows for:
-		* Terraform fmt and validate on all PRs
-		* Terraform plan on pull requests
-		* Terraform apply on merges to main branch
+    
+	* Terraform fmt and validate on all PRs
+	* Terraform plan on pull requests
+	* Terraform apply on merges to main branch
 
 ##### 6.	CI/CD:
 Implement a CI/CD pipeline using GitHub Actions for your application code.
