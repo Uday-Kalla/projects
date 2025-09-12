@@ -144,7 +144,7 @@ const express = require('express');
       console.log(`Appointment service listening at http://0.0.0.0:${port}`);
     });
 ```
-#### 2. patient-service.js
+#### Patient-service.js
 ```js
 const express = require('express');
     const app = express();
