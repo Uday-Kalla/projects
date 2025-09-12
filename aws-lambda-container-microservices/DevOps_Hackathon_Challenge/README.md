@@ -15,6 +15,8 @@ This hackathon offers three deployment tracks. Each team should choose one track
 2.	##### [AWS Fargate Deployment Track](https://github.com/Uday-Kalla/projects/tree/main/aws-lambda-container-microservices/AWS_Fargate_Deployment_Track/)
 3.	##### [AWS Lambda Container Deployment Track](https://github.com/Uday-Kalla/projects/tree/main/aws-lambda-container-microservices/AWS_Lambda_Container_Deployment_Track)
 
+---
+
 #### Common Requirements
 
 Regardless of the track you choose, you will be working with the following common elements:
@@ -53,8 +55,12 @@ Regardless of the track you choose, you will be working with the following commo
 ##### 7.	Monitoring and Logging: 
 * Set up basic monitoring and logging using AWS CloudWatch.
 
+---
+
 **Time Allocation:** <br>
 You will have 5 hours to complete this challenge. Budget your time wisely across planning, development, deployment, and documentation.
+
+---
 
 #### Evaluation Criteria
 While specific criteria vary by track, you will generally be evaluated on:
@@ -67,7 +73,9 @@ While specific criteria vary by track, you will generally be evaluated on:
 6.	Documentation quality
 7.	Overall architecture and security considerations
 8.	Proper implementation of Terraform state management and collaboration features
-	
+
+---
+
 #### Getting Started
 1.	Review the common requirements and evaluation criteria.
 2.	Choose your deployment track: EKS, Fargate, or Lambda Container.
@@ -75,7 +83,6 @@ While specific criteria vary by track, you will generally be evaluated on:
 4.	Use the provided microservices code as a starting point for your application.
 
 Good luck, and happy coding!
-
 
 ---
 
