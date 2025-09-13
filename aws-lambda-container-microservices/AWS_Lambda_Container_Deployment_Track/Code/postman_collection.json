@@ -1,0 +1,26 @@
+{
+  "info": {
+    "name": "Appointment Service API",
+    "_postman_id": "abc123",
+    "description": "Collection to test Appointment microservice endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/health"
+      }
+    },
+    {
+      "name": "Get All Appointments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/appointments"
+      }
+    }
+  ]
+}
