@@ -210,6 +210,3 @@ const express = require('express');
       console.log(`Patient service listening at http://0.0.0.0:${port}`);
     });
 ```
-
----
-<h3 align="center"><strong>process of Deployment</strong></h3>
