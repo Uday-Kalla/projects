@@ -1,0 +1,41 @@
+name: Docker Build & Push
+
+on:
+  push:
+    paths:
+      - 'docker/**'
+      - '.github/workflows/docker.yml'
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    env:
+      AWS_REGION: us-east-1
+      ECR_REPO: ${{ secrets.ECR_REPO }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to ECR
+        run: |
+          aws ecr get-login-password --region $AWS_REGION           | docker login --username AWS --password-stdin $ECR_REPO
+
+      - name: Build & Tag Docker Image
+        run: |
+          IMAGE_TAG=$(echo $GITHUB_SHA | cut -c1-7)
+          docker build -t $ECR_REPO:$IMAGE_TAG ./docker
+          docker tag $ECR_REPO:$IMAGE_TAG $ECR_REPO:latest
+          echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
+
+      - name: Push Docker Image
+        run: |
+          docker push $ECR_REPO:${{ env.IMAGE_TAG }}
+          docker push $ECR_REPO:latest
